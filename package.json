@@ -6,9 +6,10 @@
     "node": "18 || 20"
   },
   "scripts": {
-    "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
+    "dev": "concurrently \"yarn start\" \"yarn start-backend-env\"",
     "start": "yarn workspace app start",
     "start-backend": "yarn workspace backend start",
+    "start-backend-env": "dotenv -e .env -- yarn workspace backend start",
     "build:backend": "yarn workspace backend build",
     "build:all": "backstage-cli repo build --all",
     "build-image": "yarn workspace backend build-image",
@@ -36,6 +37,7 @@
     "@playwright/test": "^1.32.3",
     "@spotify/prettier-config": "^12.0.0",
     "concurrently": "^8.0.0",
+    "dotenv-cli": "^7.4.1",
     "lerna": "^7.3.0",
     "node-gyp": "^9.0.0",
     "prettier": "^2.3.2",
