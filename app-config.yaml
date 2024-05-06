@@ -99,6 +99,14 @@ catalog:
       rules:
         - allow: [User, Group]
 
+    # AWS-EC2 template
+    - type: file
+      target: ./templates/aws-ec2/template.yaml
+      rules:
+        - allow: [Template]
+
+    
+
     ## Uncomment these lines to add more example data
     # - type: url
     #   target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/all.yaml

@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ${{ values.name | dump }}
+  annotations:
+    github.com/project-slug: kanupriya0508/aws-ec2
+  description: ${{ values.name }} running on AWS EC2 managed by Terraform
+spec:
+  type: service
+  owner: user:guest
+  lifecycle: experimental
