@@ -40,11 +40,10 @@ import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/
 import { githubAuthApiRef } from '@backstage/core-plugin-api';
 import { HomePage } from './components/home/HomePage';
 import { HomepageCompositionRoot } from '@backstage/plugin-home';
-// import { ThemeProvider } from '@material-ui/core/styles';
-// import CssBaseline from '@material-ui/core/CssBaseline';
 import LightIcon from '@material-ui/icons/WbSunny';
 import { UnifiedThemeProvider } from '@backstage/theme';
 import { myTheme } from './theme/myTheme';
+import { GitHubPage } from './components/github/GitHubPage';
 
 const githubAuthCfg = {
   id: 'github-auth-provider',
@@ -83,7 +82,7 @@ const app = createApp({
     Provider: ({ children }) => (
       <UnifiedThemeProvider theme={myTheme} children={children} />
     ),
-  }]
+  }],
 });
 
 const routes = (
@@ -126,6 +125,7 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
+    <Route path="/github" element={<GitHubPage />} />
   </FlatRoutes>
 );
 
